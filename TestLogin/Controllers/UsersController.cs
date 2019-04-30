@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace TestLogin.Controllers
         {
             _context = context;
         }
-
+        
         // GET: Users
         public async Task<IActionResult> Index()
         {
@@ -28,10 +29,18 @@ namespace TestLogin.Controllers
         public async Task<IActionResult> Index(string userName,string password)
         {
             var user = from u in _context.User_list where u.UserName == userName where u.Password == password select u;
-            return Content(user.ToList()[0].UserName);
+            if (user.Count() == 0)
+            {
+                return await Error();
+            }
+            return Content("ok");
             //return View(await _context.User_list.ToListAsync());
         }
-
+        public async Task<PartialViewResult> Error()
+        {
+            //await _context.User_list.ToListAsync()
+            return PartialView("_Error");
+        }
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
         {

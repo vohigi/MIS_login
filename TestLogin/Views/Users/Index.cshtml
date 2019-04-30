@@ -4,11 +4,13 @@
 }
 
 <h2>Login</h2>
-<form method="post">
+<div id="error"></div>
+<form method="post" asp-controller="Users">
     <label for="input-login">Login:</label>
     <input type="text" name="userName" id="input-login" />
     <label for="input-password">Password:</label>
     <input type="password" name="password" id="input-password" />
-    <button type="submit">Push me</button>
+    <button type="submit" id="submit">Push me</button>
 </form>
+
 
