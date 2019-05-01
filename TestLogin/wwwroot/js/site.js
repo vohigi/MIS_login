@@ -4,7 +4,7 @@
 // Write your JavaScript code.
 $("#submit").click(function (e) {
     e.preventDefault();
-    var url = "Users/Index";
+    var url = "Users/Login";
     $.ajax({
         url: url,
         method:"POST",
@@ -12,8 +12,8 @@ $("#submit").click(function (e) {
             alert(result);
             $('#error').html(result);
         },
-        error: function () {
-            alert("Error occured");
+        error: function (result) {
+            console.log(result);
         }
     });
 })

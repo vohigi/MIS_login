@@ -1,0 +1,133 @@
+html {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+body {
+  /* background: linear-gradient(141deg, #a9f8d6 0%, #a1e7f8 51%, #c2efff 75%)
+    no-repeat center center/cover; */
+  background-color: #f1f1f1;
+}
+#error {
+  text-align: center;
+  display: none;
+  background-color: rgb(221, 73, 73);
+  min-height: 5rem;
+  padding: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.login-container {
+  margin-top: 15%;
+}
+.register-container {
+  margin-top: 7%;
+}
+.row {
+  display: flex;
+  flex-flow: row;
+}
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  margin: 0.5rem;
+}
+h1 {
+  text-align: center;
+}
+.register-button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  height: 2.7rem;
+  max-width: 18rem;
+  transition-duration: 0.7s;
+  font-size: 1.2rem;
+  flex: 1;
+  background-color: #399f14;
+  color: whitesmoke;
+}
+.register-button:hover {
+  background-color: #f4ff61;
+  color: black;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.register {
+  display: flex;
+  flex-flow: column;
+  /* width: 40%; */
+  /* min-width: 40%; */
+}
+.login {
+  display: flex;
+  flex-flow: column;
+  min-width: 24%;
+}
+.column {
+  display: flex;
+  flex-flow: column;
+}
+.login-button {
+  transition-duration: 0.7s;
+  font-size: 1.3rem;
+  flex: 1;
+  margin: auto;
+  margin-top: 1rem;
+  height: 2.7rem;
+  max-width: 15rem;
+  background-color: #399f14;
+  color: whitesmoke;
+  border: 1px rgba(83, 255, 83, 0.671) solid;
+  border-radius: 1rem;
+}
+.login-button:hover {
+  background-color: #f4ff61;
+  color: black;
+}
+.register-input {
+  transition-duration: 0.7s;
+  flex: 1;
+  /* margin: 0.5rem; */
+  height: 2.5rem;
+  min-width: 17rem;
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.register-input:hover {
+  background: linear-gradient(141deg, #ddfff0 0%, #defaff 51%, #cef1ff 75%);
+}
+.register-label {
+  flex: 1;
+  /* color: rgb(230, 82, 82); */
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}
+.login-label {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.corners {
+  border-radius: 6px;
+  border: 1px rgb(175, 212, 184) solid;
+  /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); */
+}
+
+@media only screen and (max-width: 640px) {
+  .row {
+    flex-flow: column;
+  }
+  .button-container {
+    justify-content: center;
+  }
+}
