@@ -4,7 +4,7 @@ const error = document.getElementById("error");
 
 let countLog = /^[a-zA-Z0-9]{3,16}$/i;
 // const countPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,16})/;
-const countPass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!/^_*]{2,8}$/;
+const countPass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!/^_*]{8,16}$/;
 
 document.getElementById("login-btn").addEventListener("click", function (e) {
     e.preventDefault();

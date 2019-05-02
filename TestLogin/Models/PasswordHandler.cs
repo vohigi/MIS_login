@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace TestLogin.Models
@@ -22,10 +23,14 @@ namespace TestLogin.Models
             hashedPassword = new byte[36];
             Array.Copy(salt, 0, hashedPassword, 0, 16);
             Array.Copy(hash, 0, hashedPassword, 16, 20);
-            return Convert.ToBase64String(hashedPassword);
+            string pass= Convert.ToBase64String(hashedPassword); 
+
+            int le = pass.Length;
+            return pass;
         }
         public PasswordHandler(string password, string hashedPasswordStored)
         {
+            int length = hashedPasswordStored.Length;
             hashedPassword = Convert.FromBase64String(hashedPasswordStored);
             salt = new byte[16];
             Array.Copy(hashedPassword, 0, salt, 0, 16);

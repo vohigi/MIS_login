@@ -23,23 +23,28 @@ namespace TestLogin.Controllers
         public async Task<IActionResult> Login()
         {
             //await _context.User_list.ToListAsync()
-            return View();
+            User userTest = new User();
+            userTest.Password = (new PasswordHandler("Sasha280920")).GetHashedPassword();
+            return View(userTest);
         }
         [HttpPost]
-        public async Task<IActionResult> Login(string userName, string password)
+        public async Task<IActionResult> Login([FromBody]User userData)
         {
-            var user = from u in _context.User_list where u.UserName == userName select u;
+            var user = from u in _context.User_list where u.UserName == userData.UserName select u;
             if (user.Count() == 0)
             {
+                //return Content(Json(userData).ToString());
                 return ErrorLogin();
             }
-            PasswordHandler passwordhandler = new PasswordHandler(password,user.ToList()[0].Password);
+            PasswordHandler passwordhandler = new PasswordHandler(userData.Password, user.ToList()[0].Password);
             if (passwordhandler.ValidatePassword())
             {
                 return Content("ok");
+                //return Content("ok");
             }
             else
             {
+                //return Content("not ok");
                 return ErrorLogin();
             }
             //return View(await _context.User_list.ToListAsync());
