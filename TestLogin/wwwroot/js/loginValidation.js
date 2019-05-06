@@ -41,9 +41,14 @@ function validate() {
         let http = new Http();
 
         http.post("Users/Login", data).then(res => {
-            console.log(res);
-            error.innerHTML = res;
-            error.style.display = "flex";
+            if (res == "ok") {
+                window.location = "Users/Create"
+            }
+            else {
+                console.log(res);
+                error.innerHTML = res;
+                error.style.display = "flex";
+            }
         }).catch(res => { console.log(res); });
     }
 }

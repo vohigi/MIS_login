@@ -39,8 +39,9 @@ namespace TestLogin.Controllers
             PasswordHandler passwordhandler = new PasswordHandler(userData.Password, user.ToList()[0].Password);
             if (passwordhandler.ValidatePassword())
             {
+                //return RedirectToAction("Create");
+                //Create();
                 return Content("ok");
-                //return Content("ok");
             }
             else
             {
@@ -54,29 +55,38 @@ namespace TestLogin.Controllers
             //await _context.User_list.ToListAsync()
             return PartialView("_Error");
         }
-        //// GET: Users/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        public async Task<IActionResult> CreateDeclaraion()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateDeclaraion([FromBody]User userData)
+        {
+            return View();
+        }
+            //// GET: Users/Details/5
+            //public async Task<IActionResult> Details(int? id)
+            //{
+            //    if (id == null)
+            //    {
+            //        return NotFound();
+            //    }
 
-        //    var user = await _context.User_list
-        //        .FirstOrDefaultAsync(m => m.UserID == id);
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
+            //    var user = await _context.User_list
+            //        .FirstOrDefaultAsync(m => m.UserID == id);
+            //    if (user == null)
+            //    {
+            //        return NotFound();
+            //    }
 
-        //    return View(user);
-        //}
+            //    return View(user);
+            //}
 
-        //// GET: Users/Create
-        //public IActionResult Create()
-        //{
-        //    return View();
-        //}
+            //// GET: Users/Create
+            public IActionResult Create()
+        {
+            return View();
+        }
 
         // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
