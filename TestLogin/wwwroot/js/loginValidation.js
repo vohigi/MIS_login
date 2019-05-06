@@ -1,3 +1,4 @@
+const loginForm = document.getElementById("login-form");
 const login = document.getElementById("login");
 const password = document.getElementById("password");
 const error = document.getElementById("error");
@@ -15,9 +16,9 @@ function showError() {
     error.innerText = "";
     error.style.display = "flex";
     if (!countLog.test(login.value)) {
-        error.innerText +=
-            "Логін введений невірно. Використвовуйте \nлише латинські літери" +
-            " та числа.\n";
+        error.innerText += "Неверный логин или пароль";
+            //"Логін введений невірно. Використвовуйте \nлише латинські літери" +
+            //" та числа.\n";
         return false;
     } else {
         error.style.display = "none";
@@ -25,10 +26,10 @@ function showError() {
     }
     if (!countPass.test(password.value)) {
         error.style.display = "flex";
-        error.innerText +=
-            "\nПароль введений невірно. Пароль має \n" +
-            "містити латинські літери верхнього і\n" +
-            "нижнього регістру та числа.";
+        error.innerText += "Неверный логин или пароль";
+            //"\nПароль введений невірно. Пароль має \n" +
+            //"містити латинські літери верхнього і\n" +
+            //"нижнього регістру та числа.";
         error.style.alignContent = "center";
         return false;
     }
@@ -37,6 +38,9 @@ function showError() {
 
 function validate() {
     if (showError()) {
+        //loginForm.setAttribute("method", "POST");
+        //loginForm.setAttribute("action", "Users/Login");
+        //loginForm.submit();
         const data = { userName: login.value, password: password.value };
         let http = new Http();
 

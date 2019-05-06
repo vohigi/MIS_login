@@ -23,13 +23,15 @@ namespace TestLogin.Controllers
         public async Task<IActionResult> Login()
         {
             //await _context.User_list.ToListAsync()
-            User userTest = new User();
-            userTest.Password = (new PasswordHandler("Sasha280920")).GetHashedPassword();
-            return View(userTest);
+            //User userTest = new User();
+            //userTest.Password = (new PasswordHandler("Sasha280920")).GetHashedPassword();
+            //userTest
+            return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login([FromBody]User userData)
         {
+            //
             var user = from u in _context.User_list where u.UserName == userData.UserName select u;
             if (user.Count() == 0)
             {
@@ -55,12 +57,12 @@ namespace TestLogin.Controllers
             //await _context.User_list.ToListAsync()
             return PartialView("_Error");
         }
-        public async Task<IActionResult> CreateDeclaraion()
+        public async Task<IActionResult> CreateDeclaration()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateDeclaraion([FromBody]User userData)
+        public async Task<IActionResult> CreateDeclaration([FromBody]CreateDeclarationViewModel declarationData)
         {
             return View();
         }

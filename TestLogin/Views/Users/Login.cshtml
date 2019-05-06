@@ -4,10 +4,10 @@
     Layout = null;
 }
 @*@section Scripts
-{
-    <script src="@Url.Content("~/js/loginValidation.js")"></script>
-    <script src="@Url.Content("~/js/~/js/http.js")"></script>
-}*@
+    {
+        <script src="@Url.Content("~/js/loginValidation.js")"></script>
+        <script src="@Url.Content("~/js/~/js/http.js")"></script>
+    }*@
 
 @*<h2>Login</h2>
     <div id="error"></div>
@@ -31,30 +31,30 @@
 </head>
 <body>
     <div class="form-container login-container">
-        <form class="login">
+        <form id="login-form" asp-controller="Users" asp-action="Login">
             <div id="error"></div>
             <div class="column">
                 <label for="login" class="login-label">Ваш логін</label>
                 <input type="text"
-                       name="login"
+                       name="username"
                        id="login"
-                       class="register-input corners" />
+                       class="register-input corners line-height-fix" />
                 <label for="password" class="login-label">Пароль</label>
                 <input type="password"
                        name="password"
                        id="password"
-                       class="register-input corners" />
+                       class="register-input corners line-height-fix" />
             </div>
             <div class="button-container">
-                <button type="submit" class="login-button" id="login-btn">
+                <button type="submit" class="login-button line-height-fix" id="login-btn">
                     Логін
                 </button>
             </div>
         </form>
     </div>
     @*<div>
-        @Html.DisplayFor(model => model.Password)
-    </div>*@
+            @Html.DisplayFor(model => model.Password)
+        </div>*@
     <script src="~/js/loginValidation.js"></script>
     <script src="~/js/http.js"></script>
 </body>

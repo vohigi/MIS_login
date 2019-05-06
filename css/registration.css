@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-size: 16px; */
 }
 html {
   /* font-family: Georgia, "Times New Roman", Times, serif; */
@@ -37,16 +38,18 @@ nav {
 }
 .nav-link {
   /* display: inline-block; */
+  height: 70px;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  /* align-items: center; */
   text-decoration: none;
 }
 .nav-text {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
   /* display: flex; */
   /* position: relative; */
@@ -57,6 +60,7 @@ nav {
   font-size: 1.5rem;
   transition: all 0.5s;
   opacity: 0;
+  height: 100%;
   /*  */
 }
 .nav-link:hover {
@@ -69,7 +73,7 @@ nav {
 .nav-text-open {
   /* animation: nav-animation-open 0.5s forwards linear; */
   display: flex;
-  transform: translate(60px, -40px);
+  transform: translate(0px, 0px);
   opacity: 1;
 }
 .nav-text-close {
@@ -77,24 +81,7 @@ nav {
   transform: translateX(-1000px);
   display: none;
 }
-@keyframes nav-animation-open {
-  0% {
-    transform: translateX(-1000px);
-  }
-  100% {
-    transform: translateX(0);
-    display: flex;
-  }
-}
-@keyframes nav-animation-close {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1000px);
-    display: none;
-  }
-}
+
 .nav-text-span {
   display: inline-block;
   /* height: 100%; */
@@ -102,6 +89,7 @@ nav {
   vertical-align: middle;
 }
 .fas {
+  /* position: relative; */
   /* flex: 1; */
   /* position: absolute; */
   /* left: 0; */
@@ -109,14 +97,14 @@ nav {
   /* transition-duration: 0.6s; */
   flex-grow: 0;
   color: #f1f1f1;
-  width: 100%;
+  width: 60px;
   /* width: 68px; */
   /* height: 64px; */
   /* flex-basis: 100%; */
   padding-top: 1rem;
   /* margin-left: 0.5rem; */
   font-size: 2rem;
-  height: 4rem;
+  /* height: 4rem; */
   /* position: sticky; */
   /* color: #f1f1f1; */
 }
@@ -224,7 +212,7 @@ h1 {
   transition-duration: 0.7s;
   flex: 1;
   /* margin: 0.5rem; */
-  height: 2.5rem;
+  height: 4rem;
   min-width: 17rem;
   font-size: 1.2rem;
   padding-left: 0.5rem;
