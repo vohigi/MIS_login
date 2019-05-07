@@ -4,20 +4,20 @@
 }
 
 @*<h2>CreateDeclaration</h2>*@
-<div class="form-container register-container">
-    <form class="register">
+<div class="form-container register-container column">
+    <form class="column" method="post">
         <h1>Створення декларації</h1>
         <div id="error"></div>
 
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="first-name" class="register-label pointer">Ім'я:<span class="redstar">*</span></label>
                 <input type="text"
                        name="first-name"
                        id="first-name"
                        class="register-input corners line-height-fix" />
             </div>
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="middle-name" class="register-label pointer">По-батькові:<span class="redstar">*</span></label>
                 <input type="text"
                        name="middle-name"
@@ -26,14 +26,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="second-name" class="register-label pointer">Прізвище:<span class="redstar">*</span></label>
                 <input type="text"
                        name="second-name"
                        id="second-name"
                        class="register-input corners line-height-fix" />
             </div>
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="phone" class="register-label pointer">Телефон:<span class="redstar">*</span></label>
                 <input type="text"
                        name="phone"
@@ -42,14 +42,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="password" class="register-label pointer">Пароль:<span class="redstar">*</span></label>
                 <input type="password"
                        name="password"
                        id="password"
                        class="register-input corners line-height-fix" />
             </div>
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="second-password" class="register-label pointer">Повторіть пароль:<span class="redstar">*</span></label>
                 <input type="password"
                        name="second-password"
@@ -59,7 +59,7 @@
         </div>
         <!-- LastName  MiddleName  FirstName  TaxID  Phone  Email  BirthDate -->
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="gender" class="register-label">Стать:<span class="redstar">*</span></label>
                 <select name="gender"
                         id="gender"
@@ -70,7 +70,7 @@
                 </select>
             </div>
 
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="adress" class="register-label pointer">Адреса:<span class="redstar">*</span></label>
                 <input type="text"
                        name="adress"
@@ -79,14 +79,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="ident-code" class="register-label pointer">Ідентифікаційний код<span class="redstar">*</span></label>
                 <input type="text"
                        name="ident-code"
                        id="ident-code"
                        class="register-input corners line-height-fix" />
             </div>
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="email" class="register-label pointer">Електронна пошта:<span class="redstar">*</span></label>
                 <input type="email"
                        name="email"
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group">
+            <div class="input-group column">
                 <label for="date-of-birth" class="register-label pointer">Дата народження<span class="redstar">*</span></label>
                 <input type="date"
                        name="date-of-birth"
@@ -104,13 +104,24 @@
                        min="1900-01-01"
                        value="" />
             </div>
-            <div class="input-group button-container">
+            <div class="input-group button-container  column">
                 <button type="submit"
                         id="register-btn"
                         class="register-button corners line-height-fix">
                     Створити декларацію
                 </button>
             </div>
+        </div>
+    </form>
+</div>
+<div class="success-declaration" id="success-form">
+    <div class="black-screen"></div>
+    <form class="success-form column">
+        <div class="information">
+            Декларація створена успішно
+        </div>
+        <div class="confirm">
+            <button type="button" id="submit-declaration">OK</button>
         </div>
     </form>
 </div>

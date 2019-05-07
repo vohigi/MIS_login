@@ -30,20 +30,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="form-container login-container">
+    <div class="form-container login-container column">
         <form id="login-form" asp-controller="Users" asp-action="Login">
             <div id="error"></div>
-            <div class="column">
+            <div class="column align">
                 <label for="login" class="login-label">Ваш логін</label>
                 <input type="text"
                        name="username"
                        id="login"
-                       class="register-input corners line-height-fix" />
+                       class="register-input corners" />
                 <label for="password" class="login-label">Пароль</label>
                 <input type="password"
                        name="password"
                        id="password"
-                       class="register-input corners line-height-fix" />
+                       class="register-input corners" />
             </div>
             <div class="button-container">
                 <button type="submit" class="login-button line-height-fix" id="login-btn">
