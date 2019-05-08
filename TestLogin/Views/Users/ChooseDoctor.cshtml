@@ -1,0 +1,15 @@
+﻿
+@{
+    @model TestLogin.Models.Employees;
+    ViewData["Title"] = "ChooseDoctor";
+    @Html.HiddenFor(x => x.Email)
+}
+
+<h2>ChooseDoctor</h2>
+
+<form method="post">
+    <input type="submit" id="submit" />
+</form>
+
+<script src="../js/chooseDoctor.js"></script>
+<script src="../js/http.js"></script>

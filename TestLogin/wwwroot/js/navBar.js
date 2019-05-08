@@ -14,5 +14,5 @@ nav.addEventListener("mouseout", function() {
   navText.forEach(element => {
     element.classList.remove("nav-text-open");
   });
-  nav.style.width = "5%";
+  nav.style.width = "60px";
 });

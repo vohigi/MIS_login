@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* font-size: 16px; */
 }
 html {
   /* font-family: Georgia, "Times New Roman", Times, serif; */
@@ -17,50 +18,90 @@ body {
   background-color: #f1f1f1;
 }
 nav {
-  -moz-transition-duration: 0.3s;
   transition: 0.3s;
-  display: flex;
-  flex-flow: column;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  min-width: 5%;
+  min-width: 50px;
   width: 5%;
   background-color: #399f14;
 }
 .nav-links {
   list-style-type: none;
   width: 100%;
-  display: flex;
-  flex-flow: column;
   text-align: center;
 }
 .nav-link {
   /* display: inline-block; */
+  height: 70px;
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* align-items: center; */
   text-decoration: none;
 }
 .nav-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   /* display: flex; */
-  position: absolute;
-  transform: translateX(-1000px);
+  /* position: relative; */
+  /* position: absolute; */
+  /* display: block; */
+  transform: translateY(-2000px);
   color: #f1f1f1;
   font-size: 1.5rem;
+  transition: all 0.5s;
+  opacity: 0;
+  height: 100%;
+  /*  */
+}
+.nav-link:hover {
+  color: #3bad11;
+  background-color: #f4ff61;
+}
+.nav-link-open {
+  flex-wrap: unset;
+}
+.nav-text-open {
+  /* animation: nav-animation-open 0.5s forwards linear; */
+  display: flex;
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+.nav-text-close {
+  /* animation: nav-animation-close 0.5s forwards linear; */
+  transform: translateX(-1000px);
+  display: none;
+}
+
+.nav-text-span {
+  display: inline-block;
+  /* height: 100%; */
+  /* width: 100%; */
+  vertical-align: middle;
 }
 .fas {
-  flex: 1;
+  /* position: relative; */
+  /* flex: 1; */
   /* position: absolute; */
   /* left: 0; */
-  transition-duration: 0.6s;
+  /* display: block; */
+  /* transition-duration: 0.6s; */
+  flex-grow: 0;
   color: #f1f1f1;
-  width: 100%;
+  width: 60px;
+  /* width: 68px; */
+  /* height: 64px; */
+  /* flex-basis: 100%; */
   padding-top: 1rem;
-  /* margin-top: 1rem; */
+  /* margin-left: 0.5rem; */
   font-size: 2rem;
-  height: 4rem;
+  /* height: 4rem; */
+  /* position: sticky; */
   /* color: #f1f1f1; */
 }
 .fas:hover {
@@ -167,7 +208,7 @@ h1 {
   transition-duration: 0.7s;
   flex: 1;
   /* margin: 0.5rem; */
-  height: 2.5rem;
+  height: 4rem;
   min-width: 17rem;
   font-size: 1.2rem;
   padding-left: 0.5rem;
