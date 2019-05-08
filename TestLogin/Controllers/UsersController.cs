@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using TestLogin.Models;
 
 namespace TestLogin.Controllers
@@ -57,13 +58,20 @@ namespace TestLogin.Controllers
             //await _context.User_list.ToListAsync()
             return PartialView("_Error");
         }
-        public async Task<IActionResult> CreateDeclaration()
+        public async Task<IActionResult> ChooseDoctor()
         {
+            
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateDeclaration([FromBody]CreateDeclarationViewModel declarationData)
+        public async Task<IActionResult> CreateDeclaration([FromBody] Employees employee)
         {
+            return View(employee);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateDeclaration([FromBody]Declarations declarationData)
+        {
+            
             return View();
         }
             //// GET: Users/Details/5
