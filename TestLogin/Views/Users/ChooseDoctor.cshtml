@@ -8,30 +8,28 @@
 <main>
     <h2>ChooseDoctor</h2>
 
-    <form method="post">
-        <input type="submit" id="submit" />
-    </form>
-
-
-    @foreach (var a in Model)
-    {
-    <div class="doctor-info">
-        @Html.HiddenFor(Model => a.EmployeeId)
-        <div class="doc-img">
-            @Html.DisplayNameFor(model => a.MiddleName)
-        </div>
-        <div class="doc-val">
-            <span>
-                @Html.DisplayFor(Model => a.FirstName)
-                @Html.DisplayFor(Model => a.MiddleName)
-                @Html.DisplayFor(Model => a.LastName)
-            </span>
-            <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
-            <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
-            <span>@Html.DisplayFor(Model => a.Phone)</span>
-        </div>
+    <div class="doctors">
+        @foreach (var a in Model)
+        {
+        <form class="doctor-info" action="CreateDeclaration" method="POST">
+            @Html.HiddenFor(Model => a.EmployeeId)
+            <div class="doc-img">
+                @Html.DisplayNameFor(model => a.MiddleName)
+                <input type="submit" value="Вибрати"/>
+            </div>
+            <div class="doc-val">
+                <span>
+                    @Html.DisplayFor(Model => a.FirstName)
+                    @Html.DisplayFor(Model => a.MiddleName)
+                    @Html.DisplayFor(Model => a.LastName)
+                </span>
+                <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
+                <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
+                <span>@Html.DisplayFor(Model => a.Phone)</span>
+            </div>
+        </form>
+        }
     </div>
-    }
         
     </main>
     <script src="../js/chooseDoctor.js"></script>

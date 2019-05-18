@@ -69,43 +69,42 @@ namespace TestLogin.Controllers
         }
         public async Task<IActionResult> ChooseDoctor()
         {
-            var _e = _context.Employees.Include(x=>x.Msp).ToListAsync();
+            var _e = _context.Employees.Include(x => x.Msp).ToListAsync();
             return View(await _e);
         }
-        //[HttpPost]
-        public async Task<IActionResult> CreateDeclaration()
-        {
-        //    [FromBody]
-        //Employees employe
-        //    employee
-           return View();
-        }
         [HttpPost]
-        public async Task<IActionResult> CreateDeclaration([FromBody]Declarations declarationData)
+        public async Task<IActionResult> CreateDeclaration([FromForm]String employeeId)
         {
-            
+            //    [FromBody]
+            //Employees employe
+            //    employee
             return View();
         }
-            //// GET: Users/Details/5
-            //public async Task<IActionResult> Details(int? id)
-            //{
-            //    if (id == null)
-            //    {
-            //        return NotFound();
-            //    }
+        [HttpPost]
+        public async Task<IActionResult> CreateDeclaration1([FromBody]Declarations declarationData)
+        {
+            return StatusCode(200, Json("ok"));
+        }
+        //// GET: Users/Details/5
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            //    var user = await _context.User_list
-            //        .FirstOrDefaultAsync(m => m.UserID == id);
-            //    if (user == null)
-            //    {
-            //        return NotFound();
-            //    }
+        //    var user = await _context.User_list
+        //        .FirstOrDefaultAsync(m => m.UserID == id);
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            //    return View(user);
-            //}
+        //    return View(user);
+        //}
 
-            //// GET: Users/Create
-            public IActionResult Create()
+        //// GET: Users/Create
+        public IActionResult Create()
         {
             return View();
         }
