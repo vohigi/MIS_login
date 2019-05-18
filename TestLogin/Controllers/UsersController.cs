@@ -19,6 +19,15 @@ namespace TestLogin.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> Index()
+        {
+            //await _context.User_list.ToListAsync()
+            //User userTest = new User();
+            //userTest.Password = (new PasswordHandler("Sasha280920")).GetHashedPassword();
+            //userTest
+            return View();
+        }
+
 
         // GET: Users
         public async Task<IActionResult> Login()
@@ -60,8 +69,8 @@ namespace TestLogin.Controllers
         }
         public async Task<IActionResult> ChooseDoctor()
         {
-            
-            return View();
+            var _e = _context.Employees.Include(x=>x.Msp).ToListAsync();
+            return View(await _e);
         }
         //[HttpPost]
         public async Task<IActionResult> CreateDeclaration()

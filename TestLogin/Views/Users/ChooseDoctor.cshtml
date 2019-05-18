@@ -1,15 +1,39 @@
-﻿
-@{
-    @model TestLogin.Models.Employees;
-    ViewData["Title"] = "ChooseDoctor";
-    @Html.HiddenFor(x => x.Email)
-}
+﻿@model IEnumerable<TestLogin.Models.Employees>
+    @{
 
-<h2>ChooseDoctor</h2>
+        ViewData["Title"] = "ChooseDoctor";
 
-<form method="post">
-    <input type="submit" id="submit" />
-</form>
+    }
 
-<script src="../js/chooseDoctor.js"></script>
-<script src="../js/http.js"></script>
+<main>
+
+
+    <h2>ChooseDoctor</h2>
+
+    <form method="post">
+        <input type="submit" id="submit" />
+    </form>
+
+
+    @foreach (var a in Model)
+    {
+    <div class="doctor-info">
+        <div class="doc-img">
+            @Html.DisplayNameFor(model => a.MiddleName)
+        </div>
+        <div class="doc-val">
+            <span>
+                @Html.DisplayFor(Model => a.FirstName)
+                @Html.DisplayFor(Model => a.MiddleName)
+                @Html.DisplayFor(Model => a.LastName)
+            </span>
+            <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
+            <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
+            <span>@Html.DisplayFor(Model => a.Phone)</span>
+        </div>
+    </div>
+    }
+        
+    </main>
+    <script src="../js/chooseDoctor.js"></script>
+    <script src="../js/http.js"></script>
