@@ -6,8 +6,6 @@
     }
 
 <main>
-
-
     <h2>ChooseDoctor</h2>
 
     <form method="post">
@@ -18,6 +16,7 @@
     @foreach (var a in Model)
     {
     <div class="doctor-info">
+        @Html.HiddenFor(Model => a.EmployeeId)
         <div class="doc-img">
             @Html.DisplayNameFor(model => a.MiddleName)
         </div>

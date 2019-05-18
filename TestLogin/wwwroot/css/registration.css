@@ -432,21 +432,25 @@ main {
   color: #ffbe47;
   text-decoration: none;
 }
- .doctor-info {
-  background-color: #399f14;
-  width: 20rem;
+.doctor-info {
+  width: 25rem;
+  min-width: 25rem;
   display: flex;
   margin: 1rem;
+  border: 4px #4a9643 solid;
+  border-radius: 20px;
 }
 .doc-img {
   flex: 1;
 }
 .doc-val {
-  flex: 3;
+  flex: 1.8;
   display: flex;
-  flex-flow: row;
-  background-color: #399f14;
-} 
+  flex-flow: column;
+}
+.doc-val > span {
+  margin: 1rem;
+}
 
 @media only screen and (max-width: 1024px) {
   .row {
