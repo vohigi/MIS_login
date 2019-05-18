@@ -8,29 +8,32 @@
 <main>
     <h2>ChooseDoctor</h2>
 
-    <div class="doctors">
+    <div class="doctors" id="doctor-container">
         @foreach (var a in Model)
         {
-        <form class="doctor-info" action="CreateDeclaration" method="POST">
-            @Html.HiddenFor(Model => a.EmployeeId)
-            <div class="doc-img">
-                @Html.DisplayNameFor(model => a.MiddleName)
-                <input type="submit" value="Вибрати"/>
-            </div>
-            <div class="doc-val">
-                <span>
-                    @Html.DisplayFor(Model => a.FirstName)
-                    @Html.DisplayFor(Model => a.MiddleName)
-                    @Html.DisplayFor(Model => a.LastName)
-                </span>
-                <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
-                <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
-                <span>@Html.DisplayFor(Model => a.Phone)</span>
-            </div>
-        </form>
+        <div class="doctor-form-container">
+            <form class="doctor-info" action="CreateDeclaration" method="POST">
+                @Html.HiddenFor(Model => a.EmployeeId)
+                <div class="doc-img">
+                    <img src="" alt="Doctor image"/>
+                    <input type="submit" value="Вибрати" class="choose-doctor-button"/>
+                </div>
+                <div class="doc-val">
+                    <span>
+                        @Html.DisplayFor(Model => a.FirstName)
+                        @Html.DisplayFor(Model => a.MiddleName)
+                        @Html.DisplayFor(Model => a.LastName)
+                    </span>
+                    <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
+                    <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
+                    <span>@Html.DisplayFor(Model => a.Phone)</span>
+                </div>
+            </form>
+        </div>
         }
     </div>
         
     </main>
+    <script src="../js/doctorImageSetter.js"></script>
     <script src="../js/chooseDoctor.js"></script>
     <script src="../js/http.js"></script>
