@@ -60,7 +60,7 @@ namespace TestLogin
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Users}/{action=Login}/{id?}");
+                    template: "{controller=Users}/{action=Index}/{id?}");
             });
         }
     }
