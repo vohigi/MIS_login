@@ -63,10 +63,13 @@ namespace TestLogin.Controllers
             
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> CreateDeclaration([FromBody] Employees employee)
+        //[HttpPost]
+        public async Task<IActionResult> CreateDeclaration()
         {
-            return View(employee);
+        //    [FromBody]
+        //Employees employe
+        //    employee
+           return View();
         }
         [HttpPost]
         public async Task<IActionResult> CreateDeclaration([FromBody]Declarations declarationData)
