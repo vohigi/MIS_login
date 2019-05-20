@@ -73,12 +73,15 @@ namespace TestLogin.Controllers
             return View(await _e);
         }
         [HttpPost]
-        public async Task<IActionResult> CreateDeclaration([FromForm]String employeeId)
+        public async Task<IActionResult> CreateDeclaration([FromForm]int EmployeeId)
         {
+            //[FromBody] Employees employee
+
             //    [FromBody]
-            //Employees employe
+            Employees employee = new Employees();
+            employee.EmployeeId = EmployeeId;
             //    employee
-            return View();
+            return View(employee);
         }
         [HttpPost]
         public async Task<IActionResult> CreateDeclaration1([FromBody]Declarations declarationData)
