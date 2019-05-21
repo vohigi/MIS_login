@@ -6,11 +6,14 @@
     }
 
 <main>
-    <h2>ChooseDoctor</h2>
+    <h2>Виберіть лікаря</h2>
 
     <div class="doctor-filter">
-        <select class="doctor-name-select">
-        </select>
+        <label for="doctor-name-change">Вибрати за іменем:</label>
+        <input list="doctor-name-select" id="doctor-name-change" class="corners"/>
+        <datalist class="doctor-name-select" id="doctor-name-select">
+            
+        </datalist>
     </div>
 
     <div class="doctors" id="doctor-container">
