@@ -10,7 +10,7 @@ function loadImages() {
     let employeeId = form.children[0].getAttribute("value");
     form.children[1].setAttribute(
       "src",
-      "../images/doctors/" + employeeId + ".jpg"
+      "../images/doctors/" + "employeeId" + ".jpg"
     );
     console.log(form.children[1]);
   }
