@@ -45,7 +45,6 @@ function filter() {
       if (doctorName.includes(doctorChanger.value.toLowerCase())) {
         doctorContainer.children[i].style.display = "flex";
       } else doctorContainer.children[i].style.display = "none";
-      console.log("Sdadsad".toLowerCase());
     }
   }
 }
