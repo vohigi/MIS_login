@@ -15,8 +15,8 @@
 
     @foreach (var a in Model)
     {
-    <div class="doctor-info">
-        @Html.HiddenFor(Model => a.EmployeeId)
+    <div class="doctor-info">        
+        @Html.HiddenFor(Model => a.EmployeeId, new {id = " _ "+a.EmployeeId+"_Id"})
         <div class="doc-img">
             @Html.DisplayNameFor(model => a.MiddleName)
         </div>
