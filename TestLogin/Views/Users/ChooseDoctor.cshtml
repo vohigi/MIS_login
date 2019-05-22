@@ -1,38 +1,50 @@
 ﻿@model IEnumerable<TestLogin.Models.Employees>
-    @{
+@{
 
-        ViewData["Title"] = "ChooseDoctor";
+    ViewData["Title"] = "ChooseDoctor";
 
-    }
+}
 
 <main>
-    <h2>ChooseDoctor</h2>
 
-    <form method="post">
-        <input type="submit" id="submit" />
-    </form>
+    <h2>Виберіть лікаря</h2>
 
-
-    @foreach (var a in Model)
-    {
-    <div class="doctor-info">        
-        @Html.HiddenFor(Model => a.EmployeeId, new {id = " _ "+a.EmployeeId+"_Id"})
-        <div class="doc-img">
-            @Html.DisplayNameFor(model => a.MiddleName)
-        </div>
-        <div class="doc-val">
-            <span>
-                @Html.DisplayFor(Model => a.FirstName)
-                @Html.DisplayFor(Model => a.MiddleName)
-                @Html.DisplayFor(Model => a.LastName)
-            </span>
-            <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
-            <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
-            <span>@Html.DisplayFor(Model => a.Phone)</span>
-        </div>
+    <div class="doctor-filter">
+        <label for="doctor-name-change">Вибрати за іменем:</label>
+        <input list="doctor-name-select" id="doctor-name-change" class="corners"/>
+        <datalist class="doctor-name-select" id="doctor-name-select">
+            
+        </datalist>
     </div>
-    }
-        
-    </main>
-    <script src="../js/chooseDoctor.js"></script>
-    <script src="../js/http.js"></script>
+
+    <div class="doctors" id="doctor-container">
+        @foreach (var a in Model)
+        {
+            <div class="doctor-form-container">
+                <form class="doctor-info" action="CreateDeclaration" method="POST">
+                    @Html.HiddenFor(Model => a.EmployeeId, new { @id = a.EmployeeId + "_employee", @Name = "EmployeeId" });
+
+                    <div class="doc-img">
+                        <img src="" alt="Doctor image" />
+                        <input type="submit" value="Вибрати" class="choose-doctor-button" />
+                    </div>
+                    <div class="doc-val">
+                        <span>
+                            @Html.DisplayFor(Model => a.FirstName)
+                            @Html.DisplayFor(Model => a.MiddleName)
+                            @Html.DisplayFor(Model => a.LastName)
+                        </span>
+                        <span>@Html.DisplayFor(Model => a.Msp.Name)</span>
+                        <span>@Html.DisplayFor(Model => a.Msp.Address)</span>
+                        <span>@Html.DisplayFor(Model => a.Phone)</span>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
+
+</main>
+<script src="../js/http.js"></script>
+<script src="../js/doctorImageSetter.js"></script>
+<script src="../js/chooseDoctor.js"></script>
+
