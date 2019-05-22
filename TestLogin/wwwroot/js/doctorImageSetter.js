@@ -39,12 +39,13 @@ function filter() {
     if (doctorChanger.value === "") {
       doctorContainer.children[i].style.display = "flex";
     } else {
-      let doctorName =
-        doctorContainer.children[i].children[0].children[2].firstElementChild
-          .innerText;
-      if (doctorName.includes(doctorChanger.value)) {
+      let doctorName = doctorContainer.children[
+        i
+      ].children[0].children[2].firstElementChild.innerText.toLowerCase();
+      if (doctorName.includes(doctorChanger.value.toLowerCase())) {
         doctorContainer.children[i].style.display = "flex";
       } else doctorContainer.children[i].style.display = "none";
+      console.log("Sdadsad".toLowerCase());
     }
   }
 }
