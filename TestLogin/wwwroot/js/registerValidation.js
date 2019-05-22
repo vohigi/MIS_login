@@ -9,6 +9,7 @@ const adress = document.getElementById("adress");
 const dateOfBirth = document.getElementById("date-of-birth");
 const phone = document.getElementById("phone");
 const identifical = document.getElementById("ident-code");
+const employeeId = document.getElementById("EmployeeId");
 
 const successForm = document.getElementById("success-form");
 const okButton = document.getElementById("submit-declaration");
@@ -33,7 +34,7 @@ document.getElementById("register-btn").addEventListener("click", function(e) {
   validate();
 });
 //onclick event which calls when everyting is correctly filled
-okButton.addEventListener("click", function() {});
+okButton.addEventListener("click", function () { window.location="/" });
 
 //function for fields validation
 function showError() {
@@ -104,7 +105,9 @@ function validate() {
       Password: password.value,
       CreateDate: today,
       msp: {},
-      employee: {}
+        employee: {
+            EmployeeId: employeeId.value
+        }
     };
     sendData(data); //calling ajax
   }

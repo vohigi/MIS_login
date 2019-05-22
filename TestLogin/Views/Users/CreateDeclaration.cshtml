@@ -1,4 +1,4 @@
-﻿
+﻿@model TestLogin.Models.Employees
 @{
     ViewData["Title"] = "CreateDeclaration";
 }
@@ -8,7 +8,7 @@
     <form class="column" method="post">
         <h1>Створення декларації</h1>
         <div id="error"></div>
-
+        @Html.HiddenFor(x => x.EmployeeId);
         <div class="row">
             <div class="input-group column">
                 <label for="first-name" class="register-label pointer">Ім'я:<span class="redstar">*</span></label>
