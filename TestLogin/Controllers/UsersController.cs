@@ -27,6 +27,9 @@ namespace TestLogin.Controllers
             //userTest
             return View();
         }
+        public async Task<IActionResult> Appointment(){
+            return View();
+        }
 
 
         // GET: Users

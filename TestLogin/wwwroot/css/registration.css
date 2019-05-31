@@ -491,6 +491,31 @@ main {
   width: 20rem;
   height: 2rem;
 }
+.app-time-choose-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.app-time-choose-table {
+  border-spacing: 0;
+}
+thead {
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  background-color: #399f14;
+}
+#app-time-choose-body > tr {
+  background-color: #f1f1f1;
+  height: 1.7rem;
+}
+td {
+  text-align: center;
+  border: 1px gray solid;
+}
+th {
+  height: 2rem;
+  width: 13rem;
+}
 @media only screen and (max-width: 1024px) {
   .row {
     flex-flow: column;
