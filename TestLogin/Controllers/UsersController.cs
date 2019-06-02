@@ -64,8 +64,11 @@ namespace TestLogin.Controllers
     }
     public PartialViewResult ErrorLogin()
     {
+
       //await _context.User_list.ToListAsync()
       return PartialView("_Error");
+
+
     }
     public async Task<IActionResult> ChooseDoctor()
     {
