@@ -34,7 +34,9 @@ document.getElementById("register-btn").addEventListener("click", function(e) {
   validate();
 });
 //onclick event which calls when everyting is correctly filled
-okButton.addEventListener("click", function () { window.location="/" });
+okButton.addEventListener("click", function() {
+  window.location = "/";
+});
 
 //function for fields validation
 function showError() {
@@ -91,23 +93,25 @@ function showError() {
 function validate() {
   if (showError()) {
     const data = {
-      patient: {
-        FirstName: fName.value,
-        MiddleName: mName.value,
-        LastName: sName.value,
-        Phone: phone.value,
-        Email: email.value,
-        Address: adress.value,
-        Gender: gender.value,
-        BirthDate: dateOfBirth.value,
-        TaxID: identifical.value
-      },
       Password: password.value,
-      CreateDate: today,
-      msp: {},
+      declaration: {
+        patient: {
+          FirstName: fName.value,
+          MiddleName: mName.value,
+          LastName: sName.value,
+          Phone: phone.value,
+          Email: email.value,
+          Address: adress.value,
+          Gender: gender.value,
+          BirthDate: dateOfBirth.value,
+          TaxID: identifical.value
+        },
+        CreateDate: today,
+        msp: {},
         employee: {
-            EmployeeId: employeeId.value
+          EmployeeId: employeeId.value
         }
+      }
     };
     sendData(data); //calling ajax
   }
